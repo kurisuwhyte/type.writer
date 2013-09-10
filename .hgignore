@@ -1,6 +1,7 @@
 ^target/
 ^classes/
-^checkouts^
+^checkouts/
+^dist/
 
 syntax: glob
 pom.xml
