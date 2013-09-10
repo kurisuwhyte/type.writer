@@ -10,28 +10,33 @@
 (def help "Essay --- The *essay-est* way of documenting your project.
 
 Usage:
-  essay new [template]
+  essay new <project-name> [--template=NAME]
   essay generate
   essay -h | --help
   essay --version
 
 Options:
-  -h --help     Shows this screen.
-  --version     Shows the version number.")
+  --template=NAME       The name of the template [default: default]
+  -h --help             Shows this screen.
+  --version             Shows the version number.")
 
+
+(defn- fatal [& messages]
+  (apply println (concat ["Fatal error:"] messages))
+  (System/exit 1))
 
 (defn- show-help? [args]
   (or (nil? args)
       (args "--help")))
 
-(defn initialise [template]
+(defn initialise [target template]
   (let [root-dir (jio/resource (str "templates/" template))]
-    (println "Copying template files...")
-    (doseq [node (fs/list-dir root-dir)]
-      (let [source (fs/file root-dir node)]
-        (if (fs/directory? source)  (fs/copy-dir source ".")
-            (fs/copy source node))))
-    (println "Files copied. Edit `project.edn` and run `essay generate`.")))
+    (if (or (not root-dir) (not (fs/exists? root-dir)))  (fatal "Unknown template" template)
+        (do
+          (println "Using template" template)
+          (fs/copy-dir root-dir target)
+          (println "Project initialised at " (str (fs/normalized-path target)))
+          (println "Done. Take a look at `project.edn` and run `essay generate`.")))))
 
 
 (defn generate []
@@ -54,5 +59,5 @@ Options:
     (cond
      (show-help? arg-map)       (println help)
      (arg-map "--version")      (println "Essay 0.1.0")
-     (arg-map "new")            (initialise (or (arg-map "template") "default"))
+     (arg-map "new")            (initialise (arg-map "<project-name>") (arg-map "--template"))
      (arg-map "generate")       (generate))))
