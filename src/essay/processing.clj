@@ -43,3 +43,11 @@ Also makes sure files are copied to the relevant folders, etc."
        (contextualise project)
        (provide-links (:links project))
        (provide-source source)))
+
+
+(defn render [tree]
+  (apply str (h/emit* tree)))
+
+
+(defn as-template [html]
+  (h/html-resource (java.io.StringReader. html)))
