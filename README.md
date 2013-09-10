@@ -21,8 +21,8 @@ will look. We can generate one for you, so run:
     $ essay new
 
 This will create a new Essay documentation project in the current
-folder. Templates are just regular Clojure functions that take in some file and
-spit out some HTML.
+folder. Templates are just regular HTML files which will be processed by
+Enlive.
 
 All documents live in the `source/` folder, and will be passed to the
 corresponding templates to be processed.
@@ -31,9 +31,6 @@ To generate the documentation, run:
 
     $ essay generate
 
-Or to start a Jetty server that'll automatically compile things for you, run:
-
-    $ essay server
 
 
 ## Licence
