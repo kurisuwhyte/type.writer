@@ -3,4 +3,5 @@
   :url "http://kurisuwhyte.github.io/essay"
   :license {:name "MIT"
             :url "http://github.com/kurisuwhyte/essay/blob/master/LICENCE"}
-  :dependencies [[org.clojure/clojure "1.5.1"]])
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [enlive "1.1.4"]])
