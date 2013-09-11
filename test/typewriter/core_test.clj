@@ -1,6 +1,6 @@
-(ns essay.core-test
+(ns typerwiter.core-test
   (:require [clojure.test :refer :all]
-            [essay.core :refer :all]))
+            [typewriter.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

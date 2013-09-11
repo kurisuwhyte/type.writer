@@ -1,4 +1,4 @@
-(ns essay.processing
+(ns typewriter.processing
   "Processes template files and enriches it with meta-data and markdown content.
 
 Also makes sure files are copied to the relevant folders, etc."
