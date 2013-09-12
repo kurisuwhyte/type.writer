@@ -1,4 +1,4 @@
-(defproject typewriter "0.2.0-SNAPSHOT"
+(defproject typewriter "0.2.0"
   :description "Old-school documentation, meet Simple."
   :url "http://kurisuwhyte.github.io/type.writer"
   :license {:name "MIT"
