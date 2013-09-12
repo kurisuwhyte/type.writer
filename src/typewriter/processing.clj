@@ -1,53 +1,87 @@
 (ns typewriter.processing
-  "Processes template files and enriches it with meta-data and markdown content.
-
-Also makes sure files are copied to the relevant folders, etc."
+  "Processes layout files and fill them with data from a source."
   (:use [net.cgrand.enlive-html :as h]))
 
 
-(defn provide-title [title tree]
+;;;; Helper functions
+(defn- property=
+  "Selection predicate for (attr= :property)"
+  [name]
+  (attr= :property name))
+
+
+;;;; Basic providers
+(defn provide-title 
+  "Provides the <title> of a layout."
+  [title tree]
   (h/at tree
         [:head :title] (h/content title)))
 
-(defn provide-meta [title description tree]
-  (-> tree
-      (h/at
-       [[:meta (attr= :property "og:title")]] (set-attr :content title))
-      (h/at
-       [[:meta (attr= :property "description")]] (set-attr :content description))))
 
-(defn provide-heading [title tree]
+(defn provide-meta-title
+  "Provides content for the <meta og:title> of a layout."
+  [text tree]
   (h/at tree
-        [:.project-title] (h/content title)))
+        [[:meta (property= "og:title")]]  (h/set-attr :content text)))
 
-(defn provide-source [source tree]
+
+(defn provide-meta-description
+  "Provides content for the <meta description> of a layout."
+  [text tree]
   (h/at tree
-        [:#source] (h/html-content source)))
+        [[:meta (property= "description")]]  (h/set-attr :content text)))
 
-(defn provide-links [links tree]
+
+(defn provide-heading
+  "Provides the title of the document."
+  [title tree]
   (h/at tree
-        [:.project-navigation] (h/content
-                                (h/html (map (fn [{text :text url :url}]
-                                               [:li [:a {:href url} text]])
-                                             links)))))
+        [:.tw-title]  (h/content title)))
 
-(defn contextualise [project tree]
+
+(defn provide-source
+  "Provides the source of the document."
+  [source tree]
+  (h/at tree
+        [:.tw-source]  (h/content source)))
+
+
+(defn provide-links
+  "Provides a link structure."
+  [project tree]
+  (let [links (:links project)]
+    (h/at tree
+          [:.tw-navigation :.tw-link] (h/clone-for [{text :text url :url} links]
+                                                   [:.tw-link] (h/content text)
+                                                   [:.tw-link] (h/set-attr :href url)))))
+
+
+(defn contextualise
+  "Provide contextual/meta information for the layout."
+  [project tree]
   (->> tree
-   (provide-title (:title project))
-   (provide-meta (:title project) (:description project))
-   (provide-heading (:title project))))
+       (provide-title (:title project))
+       (provide-meta-title (:title project))
+       (provide-meta-description (:description project))))
 
 
-(defn process [project source tree]
+(defn process
+  "Processes a layout and fills all fields in."
+  [project source tree]
   (->> tree
        (contextualise project)
-       (provide-links (:links project))
+       (provide-links project)
+       (provide-heading (:title project))
        (provide-source source)))
 
 
-(defn render [tree]
+(defn render 
+  "Returns an HTML representation of an Enlive tree."
+  [tree]
   (apply str (h/emit* tree)))
 
 
-(defn as-template [html]
+(defn as-template
+  "Reads a string as an Enlive template tree."
+  [html]
   (h/html-resource (java.io.StringReader. html)))
