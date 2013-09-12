@@ -11,7 +11,7 @@
   <script src="static/vendor/jquery.js"></script>
   <script src='static/vendor/flatdoc-0.8.0-legacy.js'></script>
   <script src='static/vendor/flatdoc-0.8.0.js'></script>
-  <script src='static/scripts/essay.js'></script>
+  <script src='static/scripts/type.writer.js'></script>
 
   <!-- Flatdoc theme -->
   <link  href='static/vendor/styles/theme-white.css' rel='stylesheet'>
@@ -25,9 +25,9 @@
 
   <div class='header'>
     <div class='left'>
-      <h1 class="project-title">Your Project</h1>
-      <ul class="project-navigation">
-        <li><a href='#'>Link Title</a></li>
+      <h1 class="tw-title">Your Project</h1>
+      <ul class="tw-navigation">
+        <li><a href='#' class="tw-navigation-link">Link Title</a></li>
       </ul>
     </div>
   </div>
@@ -39,8 +39,8 @@
     <div role='flatdoc-content' class='content'></div>
   </div>
 
-  <script type="x-text/markdown" id="source"></script>
-  <script>Essay.initialise()</script>
+  <script type="x-text/markdown" class="tw-source"></script>
+  <script>TypeWriter.initialise()</script>
 
 </body>
 </html>

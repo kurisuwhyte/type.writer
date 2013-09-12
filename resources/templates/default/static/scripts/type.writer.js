@@ -1,4 +1,4 @@
-/// essay.js --- Configuration & utilities for the Essay tool
+/// type.writer.js --- Configuration & utilities for type.writer
 //
 // Copyright (C) 2013 Christina Whyte
 //
@@ -31,6 +31,6 @@ function(root, $, Flatdoc) {
     })
   }
 
-  root.Essay = { initialise: initialise }
+  root.TypeWriter = { initialise: initialise }
 
 }(this, jQuery, Flatdoc)
