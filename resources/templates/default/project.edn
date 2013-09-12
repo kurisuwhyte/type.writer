@@ -1,7 +1,0 @@
-{:title "Your Project"
- :description "Your project description goes here."
- :layout "index.html"
- :links [{:text "View on Github"
-          :url  "http://github.com/USER/REPO"}
-         {:text "Issues"
-          :url  "http://github.com/USER/REPO/issues"}]}
