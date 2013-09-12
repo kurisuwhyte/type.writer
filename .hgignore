@@ -2,6 +2,7 @@
 ^classes/
 ^checkouts/
 ^dist/
+^docs/build/
 
 syntax: glob
 pom.xml

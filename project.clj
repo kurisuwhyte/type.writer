@@ -10,4 +10,5 @@
                  [myguidingstar/clansi "1.3.0"]
                  [de.ubercode.clostache/clostache "1.3.1"]
                  [clj-yaml "0.4.0"]]
-  :main typewriter.core)
+  :main typewriter.core
+  :aot  [typewriter.core])
