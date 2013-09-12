@@ -19,9 +19,9 @@ docs.
 
 Currently the best way to install type.writer is by hand:
 
- 1) Make sure you have a [Java JRE 7][JRE].
- 2) [Download the latest release][release]
- 3) Place `bin/typewriter` somewhere in your `$PATH`.
+ 1.  Make sure you have a [Java JRE 7][JRE].
+ 2.  [Download the latest release][release]
+ 3.  Place `bin/typewriter` somewhere in your `$PATH`.
 
 > **Note**: it only works on Linux right now (and **maybe** in OS/X).
 
