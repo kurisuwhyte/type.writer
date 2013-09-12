@@ -1,0 +1,7 @@
+{:title "type.writer"
+ :description "Old-school Documentation, meet Simple."
+ :layout "index.html"
+ :links [{:text "View on Github"
+          :url  "http://github.com/kurisuwhyte/typewriter"}
+         {:text "Issues"
+          :url  "http://github.com/kurisuwhyte/typewriter/issues"}]}
