@@ -51,7 +51,7 @@
   [project tree]
   (let [links (:links project)]
     (h/at tree
-          [:.tw-navigation :.tw-link] (h/clone-for [{text :text url :url} links]
+          [:.tw-navigation :.tw-item] (h/clone-for [{text :text url :url} links]
                                                    [:.tw-link] (h/content text)
                                                    [:.tw-link] (h/set-attr :href url)))))
 
