@@ -1,13 +1,11 @@
 {:project/initialised-successfully
  "Project initialised at `{{dest}}`.
 
-{{#verbose}}
 Take a look at the `project.edn` file to configure your
 project, and put all your Markdown documents in the `source/` directory.
 
 Once you run `typewriter build` we'll give you the static HTML versions
-of these based on your template.
-{{/verbose}}"
+of these based on your template."
 
 
  }
