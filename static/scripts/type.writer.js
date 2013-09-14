@@ -1,4 +1,4 @@
-/// essay.js --- Configuration & utilities for the Essay tool
+/// type.writer.js --- Configuration & utilities for type.writer
 //
 // Copyright (C) 2013 Christina Whyte
 //
@@ -27,10 +27,10 @@ function(root, $, Flatdoc) {
 
   function initialise() {
     Flatdoc.run({
-      fetcher: function(done){ done(null, $('#source').text()) }
+      fetcher: function(done){ done(null, $('.tw-source').text()) }
     })
   }
 
-  root.Essay = { initialise: initialise }
+  root.TypeWriter = { initialise: initialise }
 
 }(this, jQuery, Flatdoc)
