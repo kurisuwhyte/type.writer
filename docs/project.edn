@@ -4,6 +4,6 @@
  :links [{:text "Documentation"
           :url  "guide.html"}
          {:text "View on Github"
-          :url  "http://github.com/kurisuwhyte/typewriter"}
+          :url  "http://github.com/kurisuwhyte/type.writer"}
          {:text "Issues"
-          :url  "http://github.com/kurisuwhyte/typewriter/issues"}]}
+          :url  "http://github.com/kurisuwhyte/type.writer/issues"}]}
