@@ -27,7 +27,7 @@ function(root, $, Flatdoc) {
 
   function initialise() {
     Flatdoc.run({
-      fetcher: function(done){ done(null, $('#source').text()) }
+      fetcher: function(done){ done(null, $('.tw-source').text()) }
     })
   }
 
