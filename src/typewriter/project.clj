@@ -39,17 +39,23 @@
   (str (fs/name file) ".html"))
 
 
+(defn- has-meta-data?
+  "True if a text contains a meta-data in YAML."
+  [text]
+  (re-find #"^---(?:\r|\n)" text))
+
+
 (defn- parse-meta-data
   "Parses metadata from a text."
   [text]
-  (let [[_ meta contents] (re-matches #"(?s)---\n(.*?)\n---\n(.*)" text)]
+  (let [[_ meta contents] (re-matches #"(?s)---(?:\r|\n)+(.*?)(?:\r|\n)+---(?:\r|\n)+(.*)" text)]
     [(yaml/parse-string meta) contents]))
 
 
 (defn- parse-file
   "Parses meta-data and contents from a document file."
   [text]
-  (if (.startsWith text "---\n")  (parse-meta-data text)
+  (if (has-meta-data? text)  (parse-meta-data text)
       [nil text]))
 
 
