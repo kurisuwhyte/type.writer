@@ -43,6 +43,18 @@ After that, put the relevant meta-data in the `project.edn` file, dump your
 
     $ typewriter build
     
+    
+## Documentation
+
+You can either [check out the documentation online][docs], or build the
+documentation locally, by running:
+
+    $ cd docs
+    $ typewriter build
+
+
+[docs]: http://kurisuwhyte.github.com/type.writer
+    
 
 ## Development
 
