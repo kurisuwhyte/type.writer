@@ -21,6 +21,8 @@
   [dest-dir source-dir]
   (info "Copying files over to" (str (fs/normalized-path dest-dir)))
   (fs/copy-dir source-dir dest-dir)
+  (info "Creating source/ directory")
+  (fs/mkdirs (fs/file dest-dir "source"))
   (message :project/initialised-successfully {:dest (str dest-dir)}))
 
 

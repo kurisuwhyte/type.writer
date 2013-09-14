@@ -28,6 +28,7 @@ A theme in typewriter is just a folder containing the HTML layouts, in a
 `layout/` folder, and any static resources in a `static/` folder:
 
     + /<theme-name>
+    |--o project.edn            Meta-data for your project;
     |--o /layout                Place your .html files here;
     `--o /static                Place images, CSS, etc. here;
 
@@ -35,7 +36,7 @@ When you create a project based on a template, these files will be copied over
 to the project folder, which will have this structure:
 
     + /<project-name>
-    |--o project.edn            Meta-data for your project;
+    |--o project.edn
     |--o /source                Markdown documents
     |--o /layout
     `--o /static
