@@ -1,38 +1,74 @@
 @import url(http://fonts.googleapis.com/css?family=Special+Elite|Roboto+Slab:300);
 
 body {
-  font-size: 16px;
-  font-family: 'Open Sans', arial, sans;
+    font-size: 16px;
+    font-family: 'Open Sans', arial, sans;
 }
 .title-card {
-  width: 100%;
-  display: table;
-  background: #000;
+    width: 100%;
+    display: table;
+    background: #000;
 }
 .title-card img {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 .title-card > .in {
-  display: table-cell;
-  vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 .title-card .headline {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 800px;
-  padding: 0 50px;
-  text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
-  color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 800px;
+    padding: 0 50px;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+    color: #fff;
 }
 .title-card .headline .logo {
-  font-size: 120px;
-  font-family: 'Special Elite', arial, sans;
-  font-weight: 100;
-  line-height: 110%;
+    font-size: 120px;
+    font-family: 'Special Elite', arial, sans;
+    font-weight: 100;
+    line-height: 110%;
 }
 .title-card .headline .tagline {
-  margin-top: 30px;
-  font-size: 24px;
-  font-family: 'Roboto Slab';
-  opacity: 0.6;
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: 'Roboto Slab';
+    opacity: 0.6;
+}
+.actionable-buttons {
+    margin-top: 100px;
+    display: inline-block;
+    overflow: hidden;
+}
+.actionable-buttons .button {
+    border-radius: 0;
+    margin: 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    height: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #407a7a;
+    border: none;
+    width: 280px;
+    text-align: center;
+}
+.actionable-buttons .button:hover {
+    background: #111;
+}
+.actionable-buttons small {
+    display: block;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans;
+    opacity: 0.6;
+}
+.actionable-buttons .github {
+    padding: 25px 0 0 0;
+    height: 65px;
+    opacity: 0.9;
 }

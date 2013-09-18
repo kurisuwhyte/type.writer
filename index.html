@@ -33,6 +33,10 @@
       <div class="headline">
         <h1 class="logo">type.writer</h1>
         <h2 class="tagline">Old-School Documentation, meet Simple.</h2>
+
+        <div class="actionable-buttons">
+          <a href="https://github.com/kurisuwhyte/type.writer/releases/download/v0.2.1/typewriter-0.2.1.tar.gz" class="download button">Download<small>(type.writer 0.2.1)</small></a><a href="https://github.com/kurisuwhyte/type.writer" class="github button">View on Github</a>
+        </div>
       </div>
     </div>
   </div>
@@ -81,7 +85,9 @@ Currently the best way to install type.writer is by hand:
  2.  [Download the latest release][release];
  3.  Place `bin/typewriter` somewhere in your `$PATH`.
  
-> **Note**: it only works on Unix systems right now.
+> **Note**: Symlinked batch files in Windows are not supported. So you actually
+> need to place the real `bin` folder in your `%PATH%` for this to work. If
+> anyone knows how to fix this I'd looove to know :D
 
 [JRE]: http://www.java.com/en/download/index.jsp
 [release]: https://github.com/kurisuwhyte/type.writer/releases/download/v0.2.0/typewriter-0.2.0.tar.gz
