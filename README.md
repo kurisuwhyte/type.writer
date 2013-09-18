@@ -26,7 +26,9 @@ Currently the best way to install type.writer is by hand:
  2.  [Download the latest release][release];
  3.  Place `bin/typewriter` somewhere in your `$PATH`.
  
-> **Note**: it only works on Unix systems right now.
+> **Note**: Symlinked batch files in Windows are not supported. So you actually
+> need to place the real `bin` folder in your `%PATH%` for this to work. If
+> anyone knows how to fix this I'd looove to know :D
 
 [JRE]: http://www.java.com/en/download/index.jsp
 [release]: https://github.com/kurisuwhyte/type.writer/releases/download/v0.2.0/typewriter-0.2.0.tar.gz
