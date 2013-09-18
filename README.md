@@ -31,7 +31,7 @@ Currently the best way to install type.writer is by hand:
 > anyone knows how to fix this I'd looove to know :D
 
 [JRE]: http://www.java.com/en/download/index.jsp
-[release]: https://github.com/kurisuwhyte/type.writer/releases/download/v0.2.0/typewriter-0.2.0.tar.gz
+[release]: https://github.com/kurisuwhyte/type.writer/releases/download/v0.2.1/typewriter-0.2.1.tar.gz
 
 
 ## Basic Usage
